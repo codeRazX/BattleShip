@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const randomCell = Math.floor(Math.random() * maxRandom);
     const cell = player.remainingCells[randomCell];
 
-    computer.attack(cell,player,textMessage,userInterface.flag);
+    computer.attack(cell,player,textMessage,userInterface.flag());
 
     if(computer.winner){
       userInterface.gameOver = true;

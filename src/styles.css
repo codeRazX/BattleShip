@@ -84,7 +84,7 @@ body{
 
 /*Block Btn*/
 .group-btn{
-    margin: 4rem;
+    margin: 3rem;
     display: flex;
     justify-content: space-around;
 }
@@ -301,7 +301,7 @@ button:hover{
 }
 
 .container-default{
-    margin: 2rem;
+    margin: 1rem ;
 }
 .container-default p{
     margin-bottom: 1rem;
@@ -313,7 +313,7 @@ button:hover{
     color: orange;
 }
 .text-message{
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     text-transform: uppercase;
     color: gold;
 }
