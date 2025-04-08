@@ -17,9 +17,10 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
 
     ],
   },
 });
+//GENERAR EL BUILD Y SUBIR A GH-PAGES
