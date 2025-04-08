@@ -23,4 +23,3 @@ module.exports = merge(common, {
     ],
   },
 });
-//GENERAR EL BUILD Y SUBIR A GH-PAGES
