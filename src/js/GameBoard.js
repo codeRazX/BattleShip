@@ -22,7 +22,7 @@ class GameBoard{
 
     const msgHit = ['Direct hit! The enemy ship is on fire!','Target locked and hit! The ship is damaged!','Bullseye! The enemy fleet is shaking!','Success! Enemy vessel struck with precision!','Impact confirmed! Heavy damage inflicted!'];
 
-    const msgSunk = ['"You sank the enemy ship! The seas are yours!','Ship down! The enemy fleet is falling apart!','Victory! You have sent the ship to the depths!','Another vessel destroyed! The tides are turning!','The enemy ship is no more! The waves are quiet for now..."'];
+    const msgSunk = ['You sank the enemy ship! The seas are yours!','Ship down! The enemy fleet is falling apart!','Victory! You have sent the ship to the depths!','Another vessel destroyed! The tides are turning!','The enemy ship is no more! The waves are quiet for now...'];
 
     const msgFail = ['Missed! The shot splashes into the empty waters','Miss! The sea mocks your aim','No hit! The enemy ship remains unscathed','Splash! Just water, no ships here','Empty ocean… better luck next time!'];
 

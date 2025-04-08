@@ -12,25 +12,20 @@ root{
 html{
     font-size: 62.5%;
 }
-
 body{
     font-size: 1.6rem;
     line-height: 1.5;
-    /*Cambiar fuentes*/
     max-height: 100vh;
     overflow-x: hidden;
     background: repeating-linear-gradient(to bottom, #4E342E 10%, #3B2F2F 20%);
-  
     font-family: monospace,'Segoe UI', sans-serif;
 }
-
 .container{
     width: 80rem;
     max-width: 95%;
     margin: 2rem auto 0 auto;
     padding-bottom: 5rem;
 }
-
 
 /*Header*/
 .header{
@@ -50,8 +45,6 @@ body{
     text-shadow: 0 0 3px black;
     font-size: 4rem;
 }
-
-
 .flag-left, .flag-right{ 
     width: 2.5rem;
     height: 1.5rem;
@@ -59,19 +52,16 @@ body{
     background-color: #B22222;
     border: 2px solid #000;
 }
-
 .flag-left{
     top: 3rem;
     left: .5rem;
     transform: rotate(-3deg);
 }
-
 .flag-right{
     top: 3rem;
     right: .5rem;
     transform: rotate(3deg);
 }
-
 .flag-left::after,
 .flag-right::after{
     content: "";
@@ -83,16 +73,15 @@ body{
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 100%;
 }
-
 .flag-left::after{ 
     right: -2.2px;
     transform: rotate(-3deg);
 }
-
 .flag-right::after{
     left: -2.2px;  
     transform: rotate(3deg);
 } 
+
 /*Block Btn*/
 .group-btn{
     margin: 4rem;
@@ -111,7 +100,6 @@ button{
     text-shadow: 0 0 4px black;
     transition: transform 200ms linear, border-color 200ms linear, background-color 100ms linear;
 }
-
 button:hover{
     transform: scale(1.1);
     background-color: #4E342E;
@@ -129,6 +117,7 @@ button:hover{
     background-color: #4E342E;
     border: 2px solid #DAA520;
 }
+
 /*Board*/
 .game-board{
     max-width: 80rem;
@@ -144,7 +133,6 @@ button:hover{
     }
     
 }
-
 .board{
     width: 44rem;
     border: 10px solid var(--primaryColor,#8B5A2B); 
@@ -154,14 +142,12 @@ button:hover{
     grid-template-rows: repeat(10,1fr);
     box-shadow: 0 0 5px black, 0 0 5px inset black;
 }
-
 .cell{
    border: 1px solid #3B2F2F;  
    width: 4.2rem;
    height: 4.2rem;
    cursor: pointer;
 }
-
 .cell-enemy:hover{
     background-color: rgb(0 0 0 /.5);
 }
@@ -240,7 +226,6 @@ button:hover{
     justify-content: center;
     align-items: center;
 }
-
 .ship-A{
     background-color: red;
 }
@@ -256,6 +241,7 @@ button:hover{
 .ship-D{
     background-color: gray;
 }
+
 /*Flag*/
 .flag{
     background-color: #5F9EA0;
@@ -297,8 +283,6 @@ button:hover{
     }
 }
 
-
-
 /**Error*/
 .error,.text-turn,.text-message{
     text-align: center;
@@ -309,6 +293,7 @@ button:hover{
 .error{
     color: #FF6347;
 }
+
 /*Disabled Button*/
 .disabled-btn{
     pointer-events: none;
@@ -321,6 +306,8 @@ button:hover{
 .container-default p{
     margin-bottom: 1rem;
 }
+
+/*Text*/
 .text-turn{
     font-size: 2rem;
     color: orange;

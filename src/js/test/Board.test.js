@@ -61,7 +61,7 @@ describe('receiveAttack function', () => {
     it('"It should return a "sunk" message and ship.sunk should be true', () => {
       game.ships[4].hit();
       const result = game.receiveAttack(2,1);
-      const sunkMessages = ['"You sank the enemy ship! The seas are yours!','Ship down! The enemy fleet is falling apart!','Victory! You have sent the ship to the depths!','Another vessel destroyed! The tides are turning!','The enemy ship is no more! The waves are quiet for now..."'];
+      const sunkMessages = ['You sank the enemy ship! The seas are yours!','Ship down! The enemy fleet is falling apart!','Victory! You have sent the ship to the depths!','Another vessel destroyed! The tides are turning!','The enemy ship is no more! The waves are quiet for now..."'];
       expect(game.ships[4].sunk).toBe(true);
       expect(sunkMessages).toContain(result); 
     });
