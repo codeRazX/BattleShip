@@ -1,0 +1,323 @@
+/*Global*/
+root{
+    --primaryColor: #8B5A2B;
+    --secondaryColor: #5F9EA0;
+}
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    max-height: 100vh;
+    overflow-x: hidden;
+    background: repeating-linear-gradient(to bottom, #4E342E 10%, #3B2F2F 20%);
+    font-family: monospace,'Segoe UI', sans-serif;
+}
+.container{
+    width: 80rem;
+    max-width: 95%;
+    margin: 2rem auto 0 auto;
+    padding-bottom: 5rem;
+}
+
+/*Header*/
+.header{
+    max-width: min-content;
+    margin: 0 auto;
+    text-align: center;
+    border: 10px solid var(--primaryColor,#8B5A2B);
+    padding: 1rem 4rem;
+    background-color: var(--secondaryColor,#5F9EA0);
+    box-shadow: 0 0 5px black, 0 0 5px inset;
+    border-radius: 2px;
+    position: relative;
+  
+}
+.header h1{
+    color:#DAA520;
+    text-shadow: 0 0 3px black;
+    font-size: 4rem;
+}
+.flag-left, .flag-right{ 
+    width: 2.5rem;
+    height: 1.5rem;
+    position: absolute;
+    background-color: #B22222;
+    border: 2px solid #000;
+}
+.flag-left{
+    top: 3rem;
+    left: .5rem;
+    transform: rotate(-3deg);
+}
+.flag-right{
+    top: 3rem;
+    right: .5rem;
+    transform: rotate(3deg);
+}
+.flag-left::after,
+.flag-right::after{
+    content: "";
+    width: .4rem;
+    height: 1rem;
+    position: absolute;
+    background-color: black;
+    bottom: -1rem;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+.flag-left::after{ 
+    right: -2.2px;
+    transform: rotate(-3deg);
+}
+.flag-right::after{
+    left: -2.2px;  
+    transform: rotate(3deg);
+} 
+
+/*Block Btn*/
+.group-btn{
+    margin: 3rem;
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    background-color: #3B2F2F;
+    border: 2px solid #DAA520;
+    color: #E1E1E1;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    text-shadow: 0 0 4px black;
+    transition: transform 200ms linear, border-color 200ms linear, background-color 100ms linear;
+}
+button:hover{
+    transform: scale(1.1);
+    background-color: #4E342E;
+    border: 2px solid #3B2F2F;
+}
+
+/*Button Flip*/
+#flip-btn{
+    background-color: #DAA520;
+    border: 2px solid #3B2F2F;
+    padding: 1rem 2rem;
+}
+#flip-btn:hover{
+   
+    background-color: #4E342E;
+    border: 2px solid #DAA520;
+}
+
+/*Board*/
+.game-board{
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+   
+}
+@media (max-width: 1124px ) {
+    .game-board{     
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+.board{
+    width: 44rem;
+    border: 10px solid var(--primaryColor,#8B5A2B); 
+    background-color: var(--secondaryColor,#5F9EA0);
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(10,1fr);
+    box-shadow: 0 0 5px black, 0 0 5px inset black;
+}
+.cell{
+   border: 1px solid #3B2F2F;  
+   width: 4.2rem;
+   height: 4.2rem;
+   cursor: pointer;
+}
+.cell-enemy:hover{
+    background-color: rgb(0 0 0 /.5);
+}
+.splash-cell{
+    background-color: rgb(0 0 0 /.5);
+    cursor: not-allowed;
+}
+
+/*Board Drag Ships Preview**/
+.ships{
+    padding: 1rem;
+    margin:2rem 0;
+    display: flex;
+    gap: 2rem;
+    min-height: 12rem;
+    align-items: center;
+    border: 5px solid #DAA520;
+    max-width: 65%;
+    border-radius: 5px;
+    background-color: darkolivegreen;
+
+}
+@media (max-width: 1124px ) {
+    .ships{     
+       margin: 2rem auto;
+    }
+    
+}
+.aircraft-drag,
+.battleship-drag,
+.cruiser-drag,
+.submarine-drag,
+.destroyer-drag{
+    height: 3rem;
+    border-radius: 4px;
+    border: 2px solid black;
+    cursor: grab;
+    text-align: center;
+    font-weight: bold;
+}
+.aircraft-drag{
+    width: calc(4rem * 5 / 2);
+    background-color: red;
+}
+.battleship-drag{
+    width: calc(4rem * 4 / 2);
+    background-color: blue;
+}
+.cruiser-drag{
+    width: calc(4rem * 3 / 2);
+    background-color: green;
+}
+.submarine-drag{
+    width: calc(4rem * 3 / 2);
+    background-color: yellow;
+}
+.destroyer-drag{
+    width: calc(4rem * 2 / 2);
+    background-color: gray;
+}
+
+/*Print Cells Ships*/
+.ship-A,
+.ship-B,
+.ship-C,
+.ship-D,
+.ship-S{
+    opacity: 0;
+    border: solid 2px black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    animation: appear 1000ms ease forwards;
+    cursor: not-allowed;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ship-A{
+    background-color: red;
+}
+.ship-B{
+    background-color: blue;
+}
+.ship-C{
+    background-color: green;
+}
+.ship-S{
+    background-color: yellow;
+}
+.ship-D{
+    background-color: gray;
+}
+
+/*Flag*/
+.flag{
+    background-color: #5F9EA0;
+    border: 2px solid #3B2F2F;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    animation: appear 3000ms ease forwards;
+}
+
+.dragging-original-el{
+    box-shadow: 0 0 20px black;
+}
+.dragging-target{
+    background-color: rgb(0 0 0 /.5);
+}
+
+
+/*Anims*/
+.anim-disappear{
+    animation: disappear 500ms linear;
+}
+
+@keyframes disappear{
+    to{
+        transform: scale(0.1);
+        opacity: 0;
+    }
+}
+
+@keyframes appear{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/**Error*/
+.error,.text-turn,.text-message{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px black;
+}
+.error{
+    color: #FF6347;
+}
+
+/*Disabled Button*/
+.disabled-btn{
+    pointer-events: none;
+    opacity: .5;
+}
+
+.container-default{
+    margin: 1rem ;
+}
+.container-default p{
+    margin-bottom: 1rem;
+}
+
+/*Text*/
+.text-turn{
+    font-size: 2rem;
+    color: orange;
+}
+.text-message{
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: gold;
+}
+
+
+
+/*# sourceMappingURL=main.b4e3f645c27d8de5c9cd.css.map*/
