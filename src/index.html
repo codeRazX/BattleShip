@@ -7,8 +7,40 @@
 </head>
 <body>
     
-    <div id="container-board" class="container__board">
+    <div class="container">
+        <header class="header">
+            <h1>BattleShip</h1>
+            <span class="flag-left"></span>
+            <span class="flag-right"></span>
+        </header>
+      
+        <div class="group-btn">
+            <button type="button" id="random-btn">Random</button>
+            <button type="button" id="play-btn">Play</button>
+            <button class="disabled-btn" type="button" id="restart-btn">Restart</button>
+        </div>
 
+       <div class="container-default">
+        <p class="text-turn"></p>
+        <p class="text-message"></p>
+       </div>
+
+        <div class="ships">
+            <div class="aircraft-drag" data-ship="A" draggable="true"></div>
+            <div class="battleship-drag" data-ship="B" draggable="true"></div>
+            <div class="cruiser-drag" data-ship="C" draggable="true"></div>
+            <div class="submarine-drag" data-ship="S" draggable="true"></div>
+            <div class="destroyer-drag" data-ship="D" draggable="true"></div>
+            <button type="button" id="flip-btn">Flip</button>
+        </div>
+
+        <div id="container-board" class="game-board">
+    
+            
+        </div>
+
+       
     </div>
+   
 </body>
 </html>

@@ -1,19 +1,15 @@
 class Ship{
 
-  constructor(length = 0){
+  constructor(length,symbol){
     this.length = length;
     this.hits = 0;
-    this.sunck = false;
+    this.sunk = false;
+    this.symbol = symbol;
+    this.isPlaced = false;
   }
 
-  hit = ()=> {
-    this.hits++;
-    if(this.hits === this.length){
-      this.sunck = true;
-    }
-  };
-
-  isSunk = () => this.sunck;
+  hit = ()=> this.hits++;
+  isSunk = () => this.sunk = (this.hits === this.length);
 }
 
 export default Ship;

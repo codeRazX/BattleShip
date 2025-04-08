@@ -10,8 +10,7 @@ export default [
       sourceType: 'module',
       globals: globals.browser, 
     },
-    rules: {
-      'no-console': 'error',       
+    rules: {      
       'quotes': ['error', 'single'],
       'semi': ['error', 'always'],  
       'no-unused-vars': 'warn',      
